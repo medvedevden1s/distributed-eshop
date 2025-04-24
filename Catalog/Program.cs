@@ -5,6 +5,8 @@ builder.AddServiceDefaults();
 
 var app = builder.Build();
 
+builder.AddNpgsqlDbContext<ProductDbContext>(connectionName: "catalogdb");
+
 // Configure the HTTP request pipeline.
 app.MapDefaultEndpoints();
 
