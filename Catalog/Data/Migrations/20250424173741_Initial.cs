@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Catalog.Migrations
+namespace Catalog.Data.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration
@@ -19,7 +19,7 @@ namespace Catalog.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
-                    Price = table.Column<double>(type: "double precision", nullable: false),
+                    Price = table.Column<decimal>(type: "numeric", nullable: false),
                     ImageUrl = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
@@ -31,7 +31,8 @@ namespace Catalog.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(name: "Products");
+            migrationBuilder.DropTable(
+                name: "Products");
         }
     }
 }

@@ -9,6 +9,10 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.MapDefaultEndpoints();
 
+if (app.Environment.IsDevelopment())
+    app.UseMigration(); 
+    // For prod we should have something like SQL Server Agent jobs, Flyway, Liquibase, etc.
+
 app.UseHttpsRedirection();
 
 var summaries = new[]
