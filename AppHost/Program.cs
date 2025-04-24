@@ -1,9 +1,16 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-// add procjects and cloud native backing services here
+// Backing services
+var postgres = builder.AddPostgres("postgress") // spin up pg container
+    .WithPgAdmin() // optional
+    .WithDataVolume() // add volume to docker container 
+    .WithLifetime(ContainerLifetime.Persistent); // this allows to run the container when server is stopped
 
-builder.AddProject<Projects.Catalog>("catalog");
+var catalogDb = postgres.AddDatabase("catalogdb");
 
-// add procjects and cloud native backing services here
+// Projects
+builder.AddProject<Projects.Catalog>("catalog")
+    .WithReference(catalogDb)
+    .WaitFor(catalogDb);
 
 builder.Build().Run();
