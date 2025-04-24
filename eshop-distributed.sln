@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspire", "aspire", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{3BA24D81-BFD4-4C56-B1A7-C59CC0477788}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{43D18BE2-D85C-416F-A2D8-85B151FCB2CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHost", "AppHost\AppHost.csproj", "{42111534-74AB-42D2-8737-84273841982B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceDefaults", "ServiceDefaults\ServiceDefaults.csproj", "{C5AEA5F6-8550-4797-A42C-3006D239D3F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42111534-74AB-42D2-8737-84273841982B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42111534-74AB-42D2-8737-84273841982B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42111534-74AB-42D2-8737-84273841982B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42111534-74AB-42D2-8737-84273841982B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5AEA5F6-8550-4797-A42C-3006D239D3F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5AEA5F6-8550-4797-A42C-3006D239D3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5AEA5F6-8550-4797-A42C-3006D239D3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5AEA5F6-8550-4797-A42C-3006D239D3F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42111534-74AB-42D2-8737-84273841982B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C5AEA5F6-8550-4797-A42C-3006D239D3F9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACB8E765-4B62-460E-922C-F279B80BEFF1}
+	EndGlobalSection
+EndGlobal
