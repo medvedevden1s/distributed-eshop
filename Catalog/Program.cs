@@ -2,10 +2,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.AddServiceDefaults();
+builder.AddNpgsqlDbContext<ProductDbContext>(connectionName: "catalogdb");
 
 var app = builder.Build();
-
-builder.AddNpgsqlDbContext<ProductDbContext>(connectionName: "catalogdb");
 
 // Configure the HTTP request pipeline.
 app.MapDefaultEndpoints();
