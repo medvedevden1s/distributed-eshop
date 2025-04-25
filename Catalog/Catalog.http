@@ -1,6 +1,35 @@
-@Catalog_HostAddress = http://localhost:5185
-
-GET {{Catalog_HostAddress}}/weatherforecast/
+@Catalog_HostAddress = https://localhost:7220/products
+### Get all products
+GET {{Catalog_HostAddress}}/
 Accept: application/json
 
-###
+### Get product by ID (e.g. 1)
+GET {{Catalog_HostAddress}}/1
+Accept: application/json
+
+### Create a new product
+POST {{Catalog_HostAddress}}/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "NEW Swn Flashlight",
+  "description": "A NEW swn product for outdoor enthusiasts",
+  "price": 59.99,
+  "imageUrl": "product10.png"
+}
+
+### Update product #1
+PUT {{Catalog_HostAddress}}/10
+Content-Type: application/json
+
+{
+  "name": "UPDATED Swn Flashlight",
+  "description": "An UPDATED swn product for outdoor enthusiasts",
+  "price": 19.99,
+  "imageUrl": "product10.png"
+}
+
+### Delete product #1
+DELETE {{Catalog_HostAddress}}/10
+Accept: application/json
