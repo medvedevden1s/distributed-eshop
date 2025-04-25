@@ -1,5 +1,3 @@
-using Basket.Services;
-
 namespace Basket.Endpoints;
 
 public static class BasketEndpoints
