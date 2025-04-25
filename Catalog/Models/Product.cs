@@ -7,5 +7,4 @@ public class Product
     public string Description { get; set; } = default!;
     public decimal Price { get; set; }
     public string ImageUrl { get; set; } = default!;
-        
 }
