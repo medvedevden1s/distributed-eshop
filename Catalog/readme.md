@@ -11,7 +11,7 @@ An ASP.NET Core Minimal API that provides CRUD operations for a product catalog 
 
 This service follows a classic **N-Layer (Layered) Architecture** divided into four main layers:
 
-![img.png](img.png)
+![img.png](N-Layered Architecture.png)
 
 
 1. **Domain Layer**
