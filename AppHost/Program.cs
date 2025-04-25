@@ -13,4 +13,6 @@ builder.AddProject<Projects.Catalog>("catalog")
     .WithReference(catalogDb)
     .WaitFor(catalogDb);
 
+builder.AddProject<Projects.Basket>("basket");
+
 builder.Build().Run();
