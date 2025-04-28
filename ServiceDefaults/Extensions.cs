@@ -2,13 +2,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.ServiceDiscovery;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
-namespace Microsoft.Extensions.Hosting
+namespace ServiceDefaults
 {
     // Adds common .NET Aspire services: service discovery, resilience, health checks, and OpenTelemetry.
     // This project should be referenced by each service project in your solution.
@@ -25,7 +25,7 @@ namespace Microsoft.Extensions.Hosting
 
             builder.Services.ConfigureHttpClientDefaults(http =>
             {
-                // Turn on resilience by default
+                // Turn on resilience by default, Disable during debug 
                 http.AddStandardResilienceHandler();
 
                 // Turn on service discovery by default

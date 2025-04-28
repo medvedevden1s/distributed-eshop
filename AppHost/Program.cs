@@ -15,13 +15,15 @@ var cache = builder
     .WithLifetime(ContainerLifetime.Persistent);
 
 // Projects
-builder.AddProject<Projects.Catalog>("catalog")
+var catalog = builder
+    .AddProject<Projects.Catalog>("catalog")
     .WithReference(catalogDb)
     .WaitFor(catalogDb);
 
 var basket = builder
     .AddProject<Projects.Basket>("basket")
     .WithReference(cache)
+    .WithReference(catalog)
     .WaitFor(cache);
 
 builder.Build().Run();

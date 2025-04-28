@@ -14,4 +14,10 @@
     <PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" Version="9.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Include="..\Catalog\Models\Product.cs">
+      <Link>Models\Product.cs</Link>
+    </Compile>
+  </ItemGroup>
+
 </Project>
