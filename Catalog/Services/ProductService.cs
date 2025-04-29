@@ -27,7 +27,7 @@ public class ProductService(ProductDbContext dbcontext, IBus bus)
         if (updatedProduct.Price != inputProduct.Price)
         {
             // Create an integration event to notify other services of the price change
-            var integrationEvent = new ProductPriceChangedIntegrationEvent
+            var integrationEvent = new ProductPriceChangedEvent
             {
                 // Use the database-generated product ID
                 ProductId   = updatedProduct.Id,

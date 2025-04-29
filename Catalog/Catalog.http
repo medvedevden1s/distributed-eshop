@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 
 ### Update product #1
-PUT {{Catalog_HostAddress}}/10
+PUT {{Catalog_HostAddress}}/1
 Content-Type: application/json
 
 {

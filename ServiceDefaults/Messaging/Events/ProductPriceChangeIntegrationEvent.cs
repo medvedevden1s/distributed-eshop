@@ -1,6 +1,6 @@
 namespace ServiceDefaults.Messaging.Events;
 
-public record ProductPriceChangedIntegrationEvent : IntegrationEvent
+public record ProductPriceChangedEvent : IntegrationEvent
 {
     public int     ProductId   { get; set; } = default!;
     public string  Name        { get; set; } = default!;
