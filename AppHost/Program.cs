@@ -3,7 +3,7 @@ var builder = DistributedApplication.CreateBuilder(args);
 // Backing services
 var postgres = builder.AddPostgres("postgress") // spin up pg container
     .WithPgAdmin() // Optional admin panel
-    .WithDataVolume() // add volume to docker container 
+    // .WithDataVolume() // add volume to docker container 
     .WithLifetime(ContainerLifetime.Persistent); // this allows to run the container when server is stopped
 
 var catalogDb = postgres.AddDatabase("catalogdb");
@@ -11,19 +11,27 @@ var catalogDb = postgres.AddDatabase("catalogdb");
 var cache = builder
     .AddRedis("cache")
     .WithRedisInsight() // Optional Monitoring and Visualization redis keys
-    .WithDataVolume()
+    // .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
 
 var rabbitmq = builder
     .AddRabbitMQ("rabbitmq")
     .WithManagementPlugin()
-    .WithDataVolume()
+    // .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
 
 var keycloak = builder
     .AddKeycloak("keycloak", 8080)
-    .WithDataVolume()
+    // .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
+
+if (builder.ExecutionContext.IsRunMode)
+{
+    // Data volumes don't work on ACA for Postgres so only add when running
+    postgres.WithDataVolume();
+    rabbitmq.WithDataVolume();
+    keycloak.WithDataVolume();
+}
 
 // Projects
 var catalog = builder
